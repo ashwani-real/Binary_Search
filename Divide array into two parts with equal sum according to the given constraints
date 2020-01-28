@@ -62,9 +62,9 @@ int main(){
 		auto it=lower_bound(a1,a1+n,mid);
 			ll ind=*it;
 // 			cout<<ind<<" ";
-			sum1=psum[ind-2];
-			if(mp1[mid]!=0)
-			sum2=psum[n-1]-psum[ind-1];
+			sum1=psum[ind-1];
+			if(mp1.count(mid)>0)
+			sum2=psum[n-1]-psum[ind];
 			else sum2=psum[n-1]-sum1;
 			cout<<sum1<<" "<<sum2<<endl;
 			if(sum1==sum2){
