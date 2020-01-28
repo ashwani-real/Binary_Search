@@ -59,3 +59,46 @@ int main(){
 	}
 	return 0;
 }
+//           METHOD 2
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define V vector    
+#define pb push_back     
+#define mp make_pair      
+#define p pair           
+#define f first            
+#define s second           
+#define Q queue               
+#define S stack               
+#define test ll t;cin>>t;while(t--)
+#define md 1e9+7
+#define all(x) x.begin(),x.end()
+#define fast ios_base::sync_with_stdio(false),cin.tie(NULL),cout.tie(NULL)
+#define endl "\n"
+ll i,j,k,n,n1,n2,n3,n4,m,a,b,c,d,x,y,z,p1,q1,r1,cnt=0,cnt1=0,flag=0,flag1=0,sum=0,sum1=0,ans=0,ans1=0,mn=INT_MAX,mx=INT_MIN;
+void ashwani(){
+	#ifndef ONLINE_JUDGE
+	freopen("input.txt","r",stdin);
+	freopen("output.txt","w",stdout);
+	freopen("error.txt","w",stderr);
+	#endif
+}
+int main(){
+	ashwani();fast;
+	string s1;
+	cin>>s1;
+	cin>>k;
+	cnt=-1;
+
+	n=s1.length();
+	while(k>n){
+		k-=n;
+		n--;
+	}
+	j=s1.length()-n;
+	for(i=j;i<j+k;i++)
+		cout<<s1[i];
+	cout<<endl;
+	return 0;
+}
