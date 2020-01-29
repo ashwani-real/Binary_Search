@@ -1,0 +1,58 @@
+// https://www.geeksforgeeks.org/uniform-binary-search/
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define V vector    
+#define pb push_back     
+#define mp make_pair      
+#define p pair           
+#define f first            
+#define s second           
+#define Q queue               
+#define S stack               
+#define test ll t;cin>>t;while(t--)
+#define md 1e9+7
+#define all(x) x.begin(),x.end()
+#define fast ios_base::sync_with_stdio(false),cin.tie(NULL),cout.tie(NULL)
+#define endl "\n"
+ll i,j,k,n,n1,n2,n3,n4,m,a,b,c,d,x,y,z,cnt=0,cnt1=0,flag=0,flag1=0,sum=0,sum1=0,ans=0,ans1=0,mn=INT_MAX,mx=INT_MIN;
+void ashwani(){
+	#ifndef ONLINE_JUDGE
+	freopen("input.txt","r",stdin);
+	freopen("output.txt","w",stdout);
+	freopen("error.txt","w",stderr);
+	#endif
+}
+ll lookup_table[100005];
+void lookuptable(ll n){
+	
+	ll co=0;
+	ll pow=1;
+	lookup_table[0]=(n+1)/2;
+	while(lookup_table[co]!=0){
+		pow<<=1;    //pow=2*pow;
+		lookup_table[++co]=(n+pow>>1)/pow;
+	}
+}
+int main(){
+	ashwani();fast;
+	cin>>n;
+	ll a1[n+1];
+	for(i=0;i<n;i++)
+		cin>>a1[i];
+	cin>>x;
+	lookuptable(n);
+	ll co=0;
+	ll ind=lookup_table[0]-1;
+	while(lookup_table[co]!=0){
+		if(a1[ind]>x)
+			ind-=lookup_table[++co];
+		else ind+=lookup_table[++co];
+		if(a1[ind]==x){
+			cout<<ind<<endl;
+			break;
+		}
+	}
+	return 0;
+}
